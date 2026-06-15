@@ -1,0 +1,193 @@
+// Single source of truth for all copy + content.
+// Voice: direct, technical, confident. Volt is the only accent.
+
+export type DeviceKind = "phone" | "laptop" | "desktop";
+export type SceneKind = "mobile" | "web" | "dash";
+
+export const hero = {
+  badge: "Software studio in Erbil",
+  h1a: "Nex builds software",
+  h1b: "people keep using.",
+  sub: "Apps, websites, and business systems, designed and engineered by one team in Erbil.",
+  code: "Apps. Web. Systems. Reliability.",
+  codeTail: "Built by Nex",
+};
+
+export interface MorphStage {
+  device: DeviceKind;
+  scene: SceneKind;
+  no: string;
+  kicker: string;
+  headline: string;
+  sub: string;
+}
+
+// Hero morph: phone -> laptop -> desktop, flipped in 3D.
+export const morphStages: MorphStage[] = [
+  {
+    device: "phone",
+    scene: "mobile",
+    no: "01",
+    kicker: "On the phone",
+    headline: "A spot on the home screen.",
+    sub: "iOS & Android apps people actually keep.",
+  },
+  {
+    device: "laptop",
+    scene: "web",
+    no: "02",
+    kicker: "On the web",
+    headline: "Sites that feel instant.",
+    sub: "Fast, modern web that turns visitors into customers.",
+  },
+  {
+    device: "desktop",
+    scene: "dash",
+    no: "03",
+    kicker: "Behind the counter",
+    headline: "One system, whole business.",
+    sub: "Sales, stock and staff in a single place.",
+  },
+];
+
+export interface Service {
+  id: string;
+  no: string;
+  title: string;
+  tagline: string;
+  scene: SceneKind;
+  description: string[];
+  capabilities: string[];
+  outcome: string;
+}
+
+export const services: Service[] = [
+  {
+    id: "apps",
+    no: "01",
+    title: "Apps",
+    tagline: "iOS & Android, built to keep.",
+    scene: "mobile",
+    description: [
+      "Mobile apps that feel like they belong on the device. Fast, fluid, and obvious. One team from first sketch to the App Store.",
+    ],
+    capabilities: [
+      "Native iOS & Android",
+      "Cross-platform with Flutter",
+      "Payments, maps, push",
+      "Offline-first",
+      "Store submission handled",
+    ],
+    outcome: "An app people open every day.",
+  },
+  {
+    id: "web",
+    no: "02",
+    title: "Web",
+    tagline: "Sites that load fast and convert.",
+    scene: "web",
+    description: [
+      "Marketing sites that load in under a second, plus full web apps, dashboards and portals your team lives in all day.",
+    ],
+    capabilities: [
+      "Marketing sites that convert",
+      "Web apps & dashboards",
+      "Editable CMS",
+      "SEO & performance",
+      "Hosting handled",
+    ],
+    outcome: "A site that brings customers in.",
+  },
+  {
+    id: "systems",
+    no: "03",
+    title: "Systems",
+    tagline: "Your whole business, one screen.",
+    scene: "dash",
+    description: [
+      "Run the operation from one place. POS, stock, orders and staff stay connected, so every sale updates inventory and the numbers add up.",
+    ],
+    capabilities: [
+      "Point of sale & retail",
+      "Inventory & stock",
+      "Orders & invoicing",
+      "Staff & permissions",
+      "Live reporting",
+    ],
+    outcome: "Less paperwork, more business.",
+  },
+  {
+    id: "reliability",
+    no: "04",
+    title: "Reliability",
+    tagline: "Backed up. Monitored. Online.",
+    scene: "dash",
+    description: [
+      "Software that's down isn't software. We keep what we build backed up and monitored around the clock. If it breaks, we know before you do.",
+    ],
+    capabilities: [
+      "Automated daily backups",
+      "24/7 uptime monitoring",
+      "Security updates",
+      "Encrypted data",
+      "A real person to call",
+    ],
+    outcome: "Safe data, systems that stay up.",
+  },
+];
+
+export interface Project {
+  id: string;
+  serviceId: string;
+  title: string;
+  sub: string;
+  tags: string[];
+  scene: SceneKind;
+}
+
+// Work showcase — opens the matching service detail.
+export const projects: Project[] = [
+  {
+    id: "p-mobile",
+    serviceId: "apps",
+    title: "Mobile apps",
+    sub: "Ordering & loyalty for iOS and Android.",
+    tags: ["iOS", "Android", "Flutter"],
+    scene: "mobile",
+  },
+  {
+    id: "p-web",
+    serviceId: "web",
+    title: "Websites & web apps",
+    sub: "Fast sites and dashboards that convert.",
+    tags: ["Web", "Dashboards", "CMS"],
+    scene: "web",
+  },
+  {
+    id: "p-systems",
+    serviceId: "systems",
+    title: "Business systems",
+    sub: "POS, inventory and sales, connected.",
+    tags: ["POS", "Inventory", "Reporting"],
+    scene: "dash",
+  },
+  {
+    id: "p-reliability",
+    serviceId: "reliability",
+    title: "Always on",
+    sub: "Backups and monitoring, around the clock.",
+    tags: ["Backups", "Monitoring", "24/7"],
+    scene: "dash",
+  },
+];
+
+export const why = {
+  lines: ["A small team", "that ships.", "No shortcuts."],
+  sub: "No outsourcing. No templates. Clean design and solid engineering, built by people you can actually reach.",
+};
+
+export const contact = {
+  heading: "Tell us what you're building.",
+  sub: "A new app, a website, a system to run the day, or just an idea. Send it over and we'll get back within a day.",
+  success: "Got it. We'll be in touch within a day.",
+};
