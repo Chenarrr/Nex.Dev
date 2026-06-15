@@ -1,0 +1,144 @@
+.contact {
+  background: var(--section-alt-bg);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.contact-sub {
+  color: var(--section-alt-muted);
+  font-size: 17px;
+  line-height: 1.62;
+  max-width: 48ch;
+  margin: 22px 0 34px;
+}
+
+.contact-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--section-alt-fg);
+}
+
+.contact-card {
+  position: relative;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form label span {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--section-alt-muted);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  color: var(--section-alt-fg);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--section-alt-line);
+  border-radius: 0;
+  padding: 4px 0 13px;
+  outline: none;
+  font-size: 16px;
+  line-height: 1.45;
+  resize: vertical;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-form textarea {
+  min-height: 124px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: color-mix(in srgb, var(--section-alt-muted) 72%, transparent);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+}
+
+.contact-submit {
+  align-self: flex-start;
+  color: var(--accent);
+  margin-top: 4px;
+}
+
+.contact-submit:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.contact-err {
+  color: #b3261e;
+  font-size: 13px;
+  margin: -8px 0 0;
+}
+
+.contact-done {
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 22px;
+  padding: 42px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+html[data-theme="dark"] .contact-done {
+  background:
+    linear-gradient(rgba(244, 244, 245, 0.026) 1px, transparent 1px) 0 0 / 28px 28px,
+    var(--surface);
+}
+
+.contact-check {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+
+.contact-done h3 {
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  margin: 0;
+  max-width: 14ch;
+}
+
+.contact-done .btn-ghost {
+  color: var(--section-alt-fg);
+}
+
+@media (max-width: 880px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
