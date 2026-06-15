@@ -1,0 +1,132 @@
+.dev {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.dev-screen {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0a0a0d;
+}
+
+/* ---------- Phone ---------- */
+.phone {
+  width: 300px;
+  height: 620px;
+  border-radius: 46px;
+  background: linear-gradient(145deg, #2a2c33, #121318 58%, #090a0c);
+  border: 1px solid rgba(221, 226, 234, 0.16);
+  padding: 10px;
+  box-shadow:
+    0 40px 120px -30px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 0 0 2px #050507;
+}
+.phone .dev-screen {
+  border-radius: 36px;
+}
+.phone-notch {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 26px;
+  background: #050507;
+  border-radius: 0 0 16px 16px;
+  z-index: 3;
+}
+
+/* ---------- Laptop ---------- */
+.laptop {
+  width: 820px;
+  height: 540px;
+}
+.laptop-lid {
+  position: relative;
+  width: 760px;
+  height: 480px;
+  margin: 0 auto;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #30333b, #15161b 62%, #0a0b0e);
+  border: 1px solid rgba(221, 226, 234, 0.16);
+  padding: 14px;
+  box-shadow:
+    0 50px 130px -40px rgba(0, 0, 0, 0.85),
+    inset 0 0 0 2px #050507;
+}
+.laptop-lid .dev-screen {
+  border-radius: 8px;
+}
+.laptop-cam {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #34343f;
+}
+.laptop-base {
+  position: relative;
+  width: 820px;
+  height: 18px;
+  margin: 0 auto;
+  border-radius: 0 0 14px 14px;
+  background: linear-gradient(180deg, #2b2e35, #14151a);
+  border: 1px solid rgba(221, 226, 234, 0.16);
+  border-top: none;
+}
+.laptop-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 7px;
+  border-radius: 0 0 8px 8px;
+  background: #0c0c11;
+}
+
+/* ---------- Desktop ---------- */
+.desktop {
+  width: 980px;
+  height: 640px;
+}
+.desktop-monitor {
+  width: 980px;
+  height: 560px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #30333b, #14151a 64%, #090a0c);
+  border: 1px solid rgba(221, 226, 234, 0.16);
+  padding: 16px;
+  box-shadow:
+    0 60px 140px -40px rgba(0, 0, 0, 0.85),
+    inset 0 0 0 2px #050507;
+}
+.desktop-monitor .dev-screen {
+  border-radius: 8px;
+}
+.desktop-neck {
+  width: 90px;
+  height: 44px;
+  margin: -2px auto 0;
+  background: linear-gradient(180deg, #292c33, #14151a);
+  border-left: 1px solid rgba(221, 226, 234, 0.14);
+  border-right: 1px solid rgba(221, 226, 234, 0.14);
+}
+.desktop-foot {
+  width: 260px;
+  height: 16px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #292c33, #121318);
+  border: 1px solid rgba(221, 226, 234, 0.14);
+}

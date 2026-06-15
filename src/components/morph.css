@@ -1,0 +1,221 @@
+.morph {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--ink-fg);
+}
+
+.morph .grid-overlay {
+  opacity: 0.72;
+  --grid-line: rgba(244, 244, 245, 0.035);
+}
+
+.morph-pin {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+.morph-shell {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding-top: 94px;
+  padding-bottom: 58px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.morph-top {
+  display: flex;
+  gap: 16px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.morph-count {
+  position: absolute;
+  top: 94px;
+  right: 32px;
+  display: flex;
+  gap: 16px;
+  color: var(--ink-dim);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.morph-count span {
+  position: relative;
+}
+
+.morph-count span.active {
+  color: var(--accent);
+}
+
+.morph-count span.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 5px;
+  height: 5px;
+  transform: translateX(-50%);
+  background: var(--accent);
+}
+
+.morph-stage {
+  position: relative;
+  min-height: 520px;
+  perspective: 1600px;
+  transform-style: preserve-3d;
+  display: grid;
+  place-items: center;
+}
+
+.morph-stage .dev {
+  opacity: 0;
+  filter: none;
+}
+
+.morph-stage .dev:first-child {
+  opacity: 1;
+}
+
+.morph-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 14%;
+  width: min(46vw, 600px);
+  height: 54px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(124, 92, 255, 0.16), transparent 66%);
+  filter: blur(14px);
+  pointer-events: none;
+}
+
+.morph-caption {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  justify-self: center;
+  max-width: 760px;
+}
+
+.morph-kicker {
+  display: block;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.morph-caption h2,
+.morph-static-row h2 {
+  margin: 0;
+  color: var(--ink-fg);
+  font-size: clamp(42px, 5.5vw, 72px);
+  font-weight: 620;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.morph-caption p,
+.morph-static-row p {
+  margin: 14px auto 0;
+  color: var(--ink-muted);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.morph-static {
+  padding: 96px 0;
+}
+
+.morph-static-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.morph-static-row {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 56px;
+  align-items: center;
+  min-height: 360px;
+  border-top: 1px solid var(--ink-line);
+}
+
+.morph-static-row:last-child {
+  border-bottom: 1px solid var(--ink-line);
+}
+
+.morph-static-visual {
+  position: relative;
+  height: 320px;
+}
+
+.morph-static-visual .dev {
+  transform: translate(-50%, -50%) scale(0.42);
+}
+
+@media (max-width: 820px) {
+  .morph-shell {
+    padding-top: 86px;
+  }
+
+  .morph-count {
+    top: 86px;
+  }
+
+  .morph-stage {
+    min-height: 430px;
+  }
+
+  .morph-caption h2,
+  .morph-static-row h2 {
+    font-size: clamp(38px, 10vw, 58px);
+  }
+
+  .morph-static-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 34px 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .morph-shell {
+    padding-top: 82px;
+    padding-bottom: 42px;
+  }
+
+  .morph-top {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .morph-count {
+    right: 22px;
+  }
+
+  .morph-stage {
+    min-height: 400px;
+  }
+
+  .morph-caption {
+    text-align: left;
+  }
+
+  .morph-caption p,
+  .morph-static-row p {
+    margin-left: 0;
+    font-size: 16px;
+  }
+}
