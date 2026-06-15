@@ -1,0 +1,10 @@
+node_modules
+dist
+_design
+screenshots
+uploads
+.git
+*.log
+.DS_Store
+.env
+.claude
