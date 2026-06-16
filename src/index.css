@@ -51,6 +51,15 @@
   --max: 1240px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* spacing scale — 8px rhythm */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+  --space-6: 96px;
+  --space-7: 128px;
 }
 
 html[data-theme="dark"] {
@@ -188,6 +197,7 @@ html[data-theme="dark"] .section--light .eyebrow {
 .btn-primary,
 .btn-ghost,
 .text-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -201,8 +211,24 @@ html[data-theme="dark"] .section--light .eyebrow {
   line-height: 1;
   min-height: 42px;
   padding: 0 0 6px;
-  border-bottom: 1px solid currentColor;
   transition: color 0.2s ease, gap 0.2s ease, opacity 0.2s ease;
+}
+
+/* growing underline micro-interaction */
+.btn-primary::after,
+.btn-ghost::after,
+.text-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform-origin: left;
+  transform: scaleX(1);
+  opacity: 0.4;
+  transition: opacity 0.2s ease, transform 0.35s var(--ease);
 }
 
 .btn-primary {
@@ -219,6 +245,19 @@ html[data-theme="dark"] .section--light .eyebrow {
 .text-link:hover {
   gap: 14px;
   opacity: 1;
+}
+
+.btn-primary:hover::after,
+.btn-ghost:hover::after,
+.text-link:hover::after {
+  opacity: 1;
+}
+
+/* accessible focus ring (premium detail) */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 @media (max-width: 720px) {
