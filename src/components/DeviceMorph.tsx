@@ -31,61 +31,52 @@ export function DeviceMorph() {
       const groups = gsap.utils.toArray<HTMLElement>(".morph-group");
       if (groups.length < 3) return;
 
+      // each group is a "card" that flips on its Y axis — crisp, no fade, no blur
       groups.forEach((g, i) => {
         gsap.set(g, {
           xPercent: -50,
           yPercent: -50,
           scale: baseScale(i),
-          opacity: i === 0 ? 1 : 0,
-          y: i === 0 ? 0 : 30,
-          transformPerspective: 1400,
+          rotateY: i === 0 ? 0 : 90,
+          transformPerspective: 1200,
+          transformOrigin: "50% 50%",
+          force3D: true,
         });
       });
 
-      const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-      tl.to(groups[0], { opacity: 0, y: -30, duration: 0.3 }, 0.2)
-        .fromTo(groups[1], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.34 }, 0.3)
-        .to(groups[1], { opacity: 0, y: -30, duration: 0.3 }, 0.62)
-        .fromTo(groups[2], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.34 }, 0.72);
+      const D = 0.5;
+      const tl = gsap.timeline();
+      tl.to(groups[0], { rotateY: -90, duration: D, ease: "power2.in" }, 0.2)
+        .fromTo(groups[1], { rotateY: 90 }, { rotateY: 0, duration: D, ease: "power2.out" }, 0.2 + D * 0.5)
+        .to(groups[1], { rotateY: -90, duration: D, ease: "power2.in" }, 1.1)
+        .fromTo(groups[2], { rotateY: 90 }, { rotateY: 0, duration: D, ease: "power2.out" }, 1.1 + D * 0.5);
 
       ScrollTrigger.create({
         trigger: rootRef.current,
         pin: pinRef.current,
         start: "top top",
         end: "+=300%",
-        scrub: 0.7,
+        scrub: 0.35,
         animation: tl,
         anticipatePin: 1,
         invalidateOnRefresh: true,
         onRefresh: () => groups.forEach((g, i) => gsap.set(g, { scale: baseScale(i) })),
         onUpdate: (self) => {
-          const next = self.progress < 0.36 ? 0 : self.progress < 0.69 ? 1 : 2;
+          const next = self.progress < 0.38 ? 0 : self.progress < 0.72 ? 1 : 2;
           setActive((cur) => (cur === next ? cur : next));
         },
       });
 
       // ---- per-stage micro animations (built once, paused) ----
-      const flip = gsap
-        .timeline({ paused: true })
-        .fromTo(
-          ".twin-ios .dev",
-          { rotateY: -90, opacity: 0 },
-          { rotateY: 0, opacity: 1, duration: 0.7, ease: "power3.out" },
-        )
-        .fromTo(
-          ".twin-android .dev",
-          { rotateY: 90, opacity: 0 },
-          { rotateY: 0, opacity: 1, duration: 0.7, ease: "power3.out" },
-          0.12,
-        )
-        .to(".stage-mobile .twin", {
-          y: -10,
-          duration: 1.8,
-          ease: "sine.inOut",
-          yoyo: true,
-          repeat: -1,
-          stagger: { each: 0.25, yoyo: true, repeat: -1 },
-        });
+      // phones gently float while active (the group flip already turns them in)
+      const flip = gsap.timeline({ paused: true }).to(".stage-mobile .twin", {
+        y: -10,
+        duration: 1.8,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        stagger: { each: 0.25, yoyo: true, repeat: -1 },
+      });
 
       const scroll = gsap
         .timeline({ paused: true, repeat: -1 })

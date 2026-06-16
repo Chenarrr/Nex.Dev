@@ -77,12 +77,15 @@
   place-items: center;
 }
 
-/* each stage group is centered + scaled by GSAP */
+/* each stage group is centered + scaled by GSAP, and flips on Y */
 .morph-group {
   position: absolute;
   left: 50%;
   top: 50%;
-  will-change: transform, opacity;
+  will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* inside a group, devices flow normally (group handles centering) */
