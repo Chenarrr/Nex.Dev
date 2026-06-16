@@ -31,37 +31,49 @@ export function DeviceMorph() {
       const groups = gsap.utils.toArray<HTMLElement>(".morph-group");
       if (groups.length < 3) return;
 
-      // each group is a "card" that flips on its Y axis — crisp, no fade, no blur
+      // phones flip on Y; laptop opens/closes its lid; desktop flips on Y. Crisp, no blur.
       groups.forEach((g, i) => {
         gsap.set(g, {
           xPercent: -50,
           yPercent: -50,
           scale: baseScale(i),
-          rotateY: i === 0 ? 0 : 90,
+          rotateY: i === 2 ? 90 : 0, // phones face, laptop faces (gated by opacity), desktop edge-on
+          opacity: i === 0 ? 1 : 0,
           transformOrigin: "50% 50%",
           force3D: true,
         });
       });
+      gsap.set(".stage-web .laptop-lid", { rotateX: 84, transformOrigin: "50% 100%" });
 
-      const D = 0.5;
       const tl = gsap.timeline();
-      tl.to(groups[0], { rotateY: -90, duration: D, ease: "power2.in" }, 0.2)
-        .fromTo(groups[1], { rotateY: 90 }, { rotateY: 0, duration: D, ease: "power2.out" }, 0.2 + D * 0.5)
-        .to(groups[1], { rotateY: -90, duration: D, ease: "power2.in" }, 1.1)
-        .fromTo(groups[2], { rotateY: 90 }, { rotateY: 0, duration: D, ease: "power2.out" }, 1.1 + D * 0.5);
+      // 1 — phones flip out
+      tl.to(groups[0], { rotateY: -90, duration: 0.5, ease: "power2.in" }, 0.2);
+      // 2 — laptop appears, lid opens
+      tl.set(groups[1], { opacity: 1 }, 0.46)
+        .fromTo(
+          ".stage-web .laptop-lid",
+          { rotateX: 84 },
+          { rotateX: 0, duration: 0.55, ease: "power3.out" },
+          0.5,
+        );
+      // 3 — laptop lid closes, then hide
+      tl.to(".stage-web .laptop-lid", { rotateX: 84, duration: 0.5, ease: "power2.in" }, 1.25)
+        .set(groups[1], { opacity: 0 }, 1.8);
+      // 4 — desktop flips in
+      tl.fromTo(groups[2], { rotateY: 90, opacity: 1 }, { rotateY: 0, duration: 0.5, ease: "power2.out" }, 1.55);
 
       ScrollTrigger.create({
         trigger: rootRef.current,
         pin: pinRef.current,
         start: "top top",
-        end: "+=300%",
+        end: "+=320%",
         scrub: 0.35,
         animation: tl,
         anticipatePin: 1,
         invalidateOnRefresh: true,
         onRefresh: () => groups.forEach((g, i) => gsap.set(g, { scale: baseScale(i) })),
         onUpdate: (self) => {
-          const next = self.progress < 0.38 ? 0 : self.progress < 0.72 ? 1 : 2;
+          const next = self.progress < 0.34 ? 0 : self.progress < 0.74 ? 1 : 2;
           setActive((cur) => (cur === next ? cur : next));
         },
       });

@@ -133,6 +133,19 @@
   gap: 28px;
 }
 
+/* laptop — lid folds in 3D (hinge at base) */
+.stage-web {
+  transform-style: preserve-3d;
+}
+.stage-web .laptop {
+  transform-style: preserve-3d;
+}
+.stage-web .laptop-lid {
+  will-change: transform;
+  transform-origin: 50% 100%;
+  backface-visibility: hidden;
+}
+
 /* laptop auto-scroll content */
 .stage-web .scr-scroll {
   display: flex;
