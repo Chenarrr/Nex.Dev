@@ -31,16 +31,58 @@
 .phone .dev-screen {
   border-radius: 36px;
 }
-.phone-notch {
+
+/* iPhone — dynamic island */
+.phone-island {
   position: absolute;
-  top: 18px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 110px;
-  height: 26px;
+  width: 92px;
+  height: 24px;
   background: #050507;
-  border-radius: 0 0 16px 16px;
+  border-radius: 14px;
   z-index: 3;
+}
+
+/* Android — squarer, punch-hole camera, nav hint */
+.phone-android {
+  border-radius: 38px;
+  background: linear-gradient(145deg, #242830, #101116 58%, #08090b);
+}
+.phone-android .dev-screen {
+  border-radius: 30px;
+}
+.android-cam {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #050507;
+  box-shadow: inset 0 0 0 1.5px #1c1f27;
+  z-index: 3;
+}
+.android-nav {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  z-index: 3;
+}
+.android-nav span {
+  width: 11px;
+  height: 11px;
+  border: 1.5px solid rgba(244, 244, 245, 0.5);
+  border-radius: 3px;
+}
+.android-nav span.dot {
+  border-radius: 50%;
 }
 
 /* ---------- Laptop ---------- */
@@ -129,4 +171,68 @@
   border-radius: 8px;
   background: linear-gradient(180deg, #292c33, #121318);
   border: 1px solid rgba(221, 226, 234, 0.14);
+}
+
+/* ---------- Keyboard ---------- */
+.keyboard {
+  width: 560px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #25282f, #131419);
+  border: 1px solid rgba(221, 226, 234, 0.12);
+  box-shadow: 0 30px 70px -40px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.kb-row {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+}
+.key {
+  flex: 1;
+  height: 22px;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #1d1f26, #15161b);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.key.space {
+  flex: 6;
+}
+.key.lit {
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 14px rgba(124, 92, 255, 0.6);
+}
+
+/* ---------- Mouse ---------- */
+.mouse {
+  width: 56px;
+  height: 94px;
+  border-radius: 28px / 34px;
+  background: linear-gradient(165deg, #2a2d35, #14151a);
+  border: 1px solid rgba(221, 226, 234, 0.12);
+  box-shadow: 0 30px 60px -36px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+.mouse-wheel {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 16px;
+  border-radius: 2px;
+  background: rgba(124, 92, 255, 0.7);
+}
+
+/* ---------- Cursor (over a screen) ---------- */
+.cursor {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  z-index: 6;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+  pointer-events: none;
 }
