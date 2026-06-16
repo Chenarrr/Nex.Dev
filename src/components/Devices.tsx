@@ -56,28 +56,27 @@ export function DesktopFrame({ children }: { children: ReactNode }) {
 }
 
 /* ---------- Peripherals (desktop scene) ---------- */
-const KEYS = [10, 10, 9, 7];
+// realistic keyboard rows; numbers = relative key widths
+const KB_ROWS: number[][] = [
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.6], // fn row + backspace
+  [1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5], // tab … \
+  [1.75, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2.25], // caps … enter
+  [2.25, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2.75], // shift … shift
+  [1.25, 1.25, 1.25, 6.25, 1.25, 1.25, 1.25], // ctrl … space … ctrl
+];
 
 export function Keyboard() {
   return (
     <div className="keyboard" aria-hidden>
-      {KEYS.map((count, row) => (
-        <div className="kb-row" key={row}>
-          {row === 3 ? (
-            <>
-              <span className="key" />
-              <span className="key" />
-              <span className="key space" />
-              <span className="key" />
-              <span className="key" />
-            </>
-          ) : (
-            Array.from({ length: count }).map((_, k) => (
-              <span className="key" key={k} />
-            ))
-          )}
-        </div>
-      ))}
+      <div className="kb-deck">
+        {KB_ROWS.map((row, r) => (
+          <div className={`kb-row${r === 0 ? " kb-fn" : ""}`} key={r}>
+            {row.map((w, k) => (
+              <span className="key" style={{ flexGrow: w }} key={k} />
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -85,6 +84,7 @@ export function Keyboard() {
 export function Mouse() {
   return (
     <div className="mouse" aria-hidden>
+      <span className="mouse-split" />
       <span className="mouse-wheel" />
     </div>
   );
