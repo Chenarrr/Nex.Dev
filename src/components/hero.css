@@ -50,50 +50,62 @@ html[data-theme="dark"] .hero {
 
 .hero-brand {
   position: relative;
-  min-height: 462px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 22px;
+}
+
+.hero-lockup {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 2.6vw, 40px);
+}
+
+.hero-mark {
+  position: relative;
+  width: clamp(96px, 12vw, 168px);
+  height: clamp(150px, 19vw, 264px);
+  flex: none;
 }
 
 .hero-slash {
   position: absolute;
-  left: 11%;
-  top: 0;
-  width: min(31vw, 390px);
-  height: min(44vw, 560px);
-  background: linear-gradient(145deg, #1b1c21 0%, #070708 72%);
-  clip-path: polygon(43% 0, 76% 0, 34% 100%, 0 100%);
-  box-shadow: 0 46px 110px rgba(18, 19, 24, 0.16);
+  inset: 0;
+  background: var(--graphite);
+  clip-path: polygon(44% 0, 78% 0, 34% 100%, 0 100%);
 }
 
 html[data-theme="dark"] .hero-slash {
-  background: linear-gradient(145deg, #f4f4f5 0%, #b8b8c2 72%);
-  box-shadow: 0 38px 120px rgba(124, 92, 255, 0.16);
+  background: var(--ink-fg);
 }
 
 .hero-node {
   position: absolute;
-  left: min(33vw, 410px);
-  bottom: 18%;
-  width: 20px;
-  height: 20px;
+  right: -2%;
+  bottom: 6%;
+  width: clamp(16px, 1.6vw, 22px);
+  height: clamp(16px, 1.6vw, 22px);
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 12px rgba(124, 92, 255, 0.08);
+  box-shadow: 0 0 0 10px rgba(124, 92, 255, 0.08);
 }
 
-.hero-brand-word {
-  position: absolute;
-  left: 0;
-  bottom: 9%;
+.hero-word {
   color: var(--fg);
-  opacity: 0.16;
-  font-size: clamp(122px, 17vw, 232px);
+  font-size: clamp(96px, 13vw, 184px);
   font-weight: 650;
-  letter-spacing: -0.075em;
-  line-height: 0.82;
+  letter-spacing: -0.07em;
+  line-height: 0.8;
 }
 
-html[data-theme="dark"] .hero-brand-word {
-  opacity: 0.28;
+.hero-brand-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .hero-copy {
@@ -171,25 +183,12 @@ html[data-theme="dark"] .hero-brand-word {
   }
 
   .hero-brand {
-    min-height: 270px;
     order: 2;
+    margin-top: 8px;
   }
 
-  .hero-slash {
-    width: 250px;
-    height: 320px;
-    left: 6%;
-    top: -16px;
-  }
-
-  .hero-node {
-    left: 266px;
-    bottom: 42px;
-  }
-
-  .hero-brand-word {
-    font-size: clamp(116px, 30vw, 180px);
-    bottom: 4%;
+  .hero-word {
+    font-size: clamp(84px, 24vw, 150px);
   }
 }
 

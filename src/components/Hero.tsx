@@ -8,7 +8,7 @@ const rise = {
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.75, delay: 0.08 + i * 0.08, ease },
+    transition: { duration: 0.62, delay: 0.05 + i * 0.07, ease },
   }),
 };
 
@@ -23,9 +23,14 @@ export function Hero() {
 
         <div className="hero-stage">
           <motion.div className="hero-brand" variants={rise} custom={1} initial="hidden" animate="show" aria-label="Nex">
-            <span className="hero-slash" />
-            <span className="hero-node" />
-            <span className="hero-brand-word">Nex</span>
+            <div className="hero-lockup">
+              <span className="hero-mark">
+                <span className="hero-slash" />
+                <span className="hero-node" />
+              </span>
+              <span className="hero-word">Nex</span>
+            </div>
+            <span className="hero-brand-tag">/ software studio · Erbil</span>
           </motion.div>
 
           <div className="hero-copy">
