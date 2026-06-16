@@ -8,7 +8,7 @@ export const hero = {
   badge: "Software studio in Erbil",
   h1a: "Nex builds software",
   h1b: "people keep using.",
-  sub: "Apps, websites, and business systems, designed and engineered by one team in Erbil.",
+  sub: "Apps, websites and systems — built by one team in Erbil.",
   code: "Apps. Web. Systems. Reliability.",
   codeTail: "Built by Nex",
 };
@@ -167,7 +167,7 @@ export const projects: Project[] = [
     id: "p-cay",
     serviceId: "apps",
     title: "Çay & Co.",
-    sub: "Coffee ordering and loyalty, iOS and Android.",
+    sub: "Coffee ordering app.",
     tags: ["iOS", "Android", "Loyalty"],
     scene: "mobile",
   },
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     id: "p-hawler",
     serviceId: "web",
     title: "Hawler Eats",
-    sub: "Restaurant directory and online ordering site.",
+    sub: "Ordering website.",
     tags: ["Web", "Ordering", "SEO"],
     scene: "web",
   },
@@ -183,7 +183,7 @@ export const projects: Project[] = [
     id: "p-bazaar",
     serviceId: "systems",
     title: "Bazaar POS",
-    sub: "Point of sale and stock for a retail chain.",
+    sub: "Retail point of sale.",
     tags: ["POS", "Inventory", "Reporting"],
     scene: "dash",
   },
@@ -191,7 +191,7 @@ export const projects: Project[] = [
     id: "p-runaki",
     serviceId: "reliability",
     title: "Rûnaki Clinic",
-    sub: "Bookings backed up and monitored, around the clock.",
+    sub: "Bookings, always on.",
     tags: ["Backups", "Monitoring", "24/7"],
     scene: "dash",
   },
@@ -199,11 +199,11 @@ export const projects: Project[] = [
 
 export const why = {
   lines: ["A small team", "that ships.", "No shortcuts."],
-  sub: "No outsourcing. No templates. Clean design and solid engineering, built by people you can actually reach.",
+  sub: "No outsourcing. No templates. Built by people you can reach.",
 };
 
 export const contact = {
   heading: "Tell us what you're building.",
-  sub: "A new app, a website, a system to run the day, or just an idea. Send it over and we'll get back within a day.",
+  sub: "An app, a site, a system — or just an idea. We reply within a day.",
   success: "Got it. We'll be in touch within a day.",
 };
