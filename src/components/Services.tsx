@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { services, type Service } from "../data/content";
+import { Scene } from "./screens";
 import { Reveal } from "./Reveal";
 import "./sections.css";
 
@@ -20,14 +21,26 @@ export function Services({ onOpen }: { onOpen: (s: Service) => void }) {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.55, delay: (i % 4) * 0.07, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="svc-no">{s.no}</span>
-              <h3>{s.title}</h3>
-              <p>{s.tagline}</p>
-              <button type="button" className="svc-btn" onClick={() => onOpen(s)}>
-                Read more <span aria-hidden>→</span>
-              </button>
+              <div className="svc-media">
+                <div className={`svc-scene svc-scene-${s.scene}`}>
+                  <Scene kind={s.scene} />
+                </div>
+              </div>
+              <div className="svc-body">
+                <span className="svc-no">{s.no}</span>
+                <h3>{s.title}</h3>
+                <p>{s.tagline}</p>
+                <div className="svc-tags">
+                  {s.tags.map((t) => (
+                    <span key={t}>{t}</span>
+                  ))}
+                </div>
+                <button type="button" className="svc-btn" onClick={() => onOpen(s)}>
+                  Read more <span aria-hidden>→</span>
+                </button>
+              </div>
             </motion.article>
           ))}
         </div>

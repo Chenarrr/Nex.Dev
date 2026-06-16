@@ -56,6 +56,7 @@ export interface Service {
   title: string;
   tagline: string;
   scene: SceneKind;
+  tags: string[];
   description: string[];
   capabilities: string[];
   outcome: string;
@@ -68,6 +69,7 @@ export const services: Service[] = [
     title: "Apps",
     tagline: "iOS & Android, built to keep.",
     scene: "mobile",
+    tags: ["iOS", "Android", "Flutter"],
     description: [
       "Mobile apps that feel like they belong on the device. Fast, fluid, and obvious. One team from first sketch to the App Store.",
     ],
@@ -86,6 +88,7 @@ export const services: Service[] = [
     title: "Web",
     tagline: "Sites that load fast and convert.",
     scene: "web",
+    tags: ["Sites", "Dashboards", "CMS"],
     description: [
       "Marketing sites that load in under a second, plus full web apps, dashboards and portals your team lives in all day.",
     ],
@@ -104,6 +107,7 @@ export const services: Service[] = [
     title: "Systems",
     tagline: "Your whole business, one screen.",
     scene: "dash",
+    tags: ["POS", "Inventory", "Staff"],
     description: [
       "Run the operation from one place. POS, stock, orders and staff stay connected, so every sale updates inventory and the numbers add up.",
     ],
@@ -122,6 +126,7 @@ export const services: Service[] = [
     title: "Reliability",
     tagline: "Backed up. Monitored. Online.",
     scene: "dash",
+    tags: ["Backups", "Monitoring", "24/7"],
     description: [
       "Software that's down isn't software. We keep what we build backed up and monitored around the clock. If it breaks, we know before you do.",
     ],
