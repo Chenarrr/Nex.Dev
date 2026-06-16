@@ -22,31 +22,31 @@ export interface MorphStage {
   sub: string;
 }
 
-// Hero morph: phone -> laptop -> desktop, flipped in 3D.
+// Showcase: phone (iOS + Android) -> laptop -> desktop.
 export const morphStages: MorphStage[] = [
   {
     device: "phone",
     scene: "mobile",
     no: "01",
     kicker: "On the phone",
-    headline: "A spot on the home screen.",
-    sub: "iOS & Android apps people actually keep.",
+    headline: "On the home screen.",
+    sub: "iPhone and Android apps people open every day.",
   },
   {
     device: "laptop",
     scene: "web",
     no: "02",
     kicker: "On the web",
-    headline: "Sites that feel instant.",
-    sub: "Fast, modern web that turns visitors into customers.",
+    headline: "Fast sites that convert.",
+    sub: "Marketing sites and web apps that bring customers in.",
   },
   {
     device: "desktop",
     scene: "dash",
     no: "03",
     kicker: "Behind the counter",
-    headline: "One system, whole business.",
-    sub: "Sales, stock and staff in a single place.",
+    headline: "Your whole shop, one screen.",
+    sub: "Sales, stock and staff, connected.",
   },
 ];
 
@@ -146,36 +146,37 @@ export interface Project {
 }
 
 // Work showcase — opens the matching service detail.
+// DEMO content (placeholder projects). Replace with real Nex jobs when ready.
 export const projects: Project[] = [
   {
-    id: "p-mobile",
+    id: "p-cay",
     serviceId: "apps",
-    title: "Mobile apps",
-    sub: "Ordering & loyalty for iOS and Android.",
-    tags: ["iOS", "Android", "Flutter"],
+    title: "Çay & Co.",
+    sub: "Coffee ordering and loyalty, iOS and Android.",
+    tags: ["iOS", "Android", "Loyalty"],
     scene: "mobile",
   },
   {
-    id: "p-web",
+    id: "p-hawler",
     serviceId: "web",
-    title: "Websites & web apps",
-    sub: "Fast sites and dashboards that convert.",
-    tags: ["Web", "Dashboards", "CMS"],
+    title: "Hawler Eats",
+    sub: "Restaurant directory and online ordering site.",
+    tags: ["Web", "Ordering", "SEO"],
     scene: "web",
   },
   {
-    id: "p-systems",
+    id: "p-bazaar",
     serviceId: "systems",
-    title: "Business systems",
-    sub: "POS, inventory and sales, connected.",
+    title: "Bazaar POS",
+    sub: "Point of sale and stock for a retail chain.",
     tags: ["POS", "Inventory", "Reporting"],
     scene: "dash",
   },
   {
-    id: "p-reliability",
+    id: "p-runaki",
     serviceId: "reliability",
-    title: "Always on",
-    sub: "Backups and monitoring, around the clock.",
+    title: "Rûnaki Clinic",
+    sub: "Bookings backed up and monitored, around the clock.",
     tags: ["Backups", "Monitoring", "24/7"],
     scene: "dash",
   },
