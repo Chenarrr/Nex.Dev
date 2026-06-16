@@ -251,6 +251,14 @@
     min-height: 400px;
   }
 
+  .stage-mobile {
+    gap: 20px;
+  }
+
+  .desk-input {
+    gap: 16px;
+  }
+
   .morph-caption {
     text-align: left;
   }
