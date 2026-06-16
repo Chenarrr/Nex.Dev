@@ -4,11 +4,11 @@ import "./hero.css";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const rise = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 26 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.62, delay: 0.05 + i * 0.07, ease },
+    transition: { duration: 0.7, delay: 0.06 + i * 0.08, ease },
   }),
 };
 
@@ -23,14 +23,9 @@ export function Hero() {
 
         <div className="hero-stage">
           <motion.div className="hero-brand" variants={rise} custom={1} initial="hidden" animate="show" aria-label="Nex">
-            <div className="hero-lockup">
-              <span className="hero-mark">
-                <span className="hero-slash" />
-                <span className="hero-node" />
-              </span>
-              <span className="hero-word">Nex</span>
-            </div>
-            <span className="hero-brand-tag">/ software studio · Erbil</span>
+            <span className="hero-slash" />
+            <span className="hero-node" />
+            <span className="hero-word">Nex</span>
           </motion.div>
 
           <div className="hero-copy">
@@ -55,19 +50,9 @@ export function Hero() {
               <a href="#contact" className="btn-primary">
                 Tell us what you're building <span aria-hidden>→</span>
               </a>
-              <a href="#work" className="btn-ghost">
-                See the work <span aria-hidden>→</span>
-              </a>
             </motion.div>
           </div>
         </div>
-
-        <motion.div className="hero-capabilities" variants={rise} custom={6} initial="hidden" animate="show">
-          <span>Apps</span>
-          <span>Web</span>
-          <span>Systems</span>
-          <span>Reliability</span>
-        </motion.div>
       </div>
     </section>
   );
