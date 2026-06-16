@@ -141,6 +141,16 @@ export const services: Service[] = [
   },
 ];
 
+// "What we do" — six small, static capability tiles.
+export const whatWeDo = [
+  { no: "01", title: "Apps", line: "iOS & Android" },
+  { no: "02", title: "Web", line: "Sites & web apps" },
+  { no: "03", title: "Systems", line: "POS & inventory" },
+  { no: "04", title: "Design", line: "UI, UX & brand" },
+  { no: "05", title: "Security", line: "Backups & monitoring" },
+  { no: "06", title: "Support", line: "Updates, on call" },
+];
+
 export interface Project {
   id: string;
   serviceId: string;

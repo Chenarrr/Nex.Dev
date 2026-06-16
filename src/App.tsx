@@ -42,7 +42,7 @@ export default function App() {
       <main>
         <Hero />
         <DeviceMorph />
-        <Services onOpen={setOpenService} />
+        <Services />
         <Projects onOpen={setOpenService} />
         <WhyNex />
         <Contact />
