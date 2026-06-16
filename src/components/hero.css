@@ -82,6 +82,15 @@ html[data-theme="dark"] .hero-slash {
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 12px rgba(124, 92, 255, 0.08);
+  animation: nodePulse 2.8s var(--ease) infinite;
+}
+@keyframes nodePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 10px rgba(124, 92, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 0 18px rgba(124, 92, 255, 0.02);
+  }
 }
 
 .hero-word {

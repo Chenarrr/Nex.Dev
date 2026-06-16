@@ -31,6 +31,13 @@
   min-height: 132px;
   display: flex;
   flex-direction: column;
+  transition: background 0.3s var(--ease);
+}
+.wd-tile:hover {
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+.wd-tile:hover .wd-no {
+  color: var(--accent-2);
 }
 .wd-no {
   font-family: var(--mono);
@@ -88,6 +95,15 @@
   color: var(--ink-muted);
   white-space: nowrap;
   flex: none;
+  animation: hintNudge 2.4s ease-in-out infinite;
+}
+@keyframes hintNudge {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
 }
 
 .work-track {
