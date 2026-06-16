@@ -159,6 +159,16 @@ export function DashScreen() {
   );
 }
 
+// Tall, auto-scrollable web page for the laptop stage (two stacked copies loop).
+export function WebScrollScreen() {
+  return (
+    <div className="scr-scroll">
+      <WebScreen />
+      <WebScreen />
+    </div>
+  );
+}
+
 export function Scene({ kind }: { kind: "mobile" | "web" | "dash" }) {
   if (kind === "mobile") return <MobileScreen />;
   if (kind === "web") return <WebScreen />;

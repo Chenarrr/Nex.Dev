@@ -70,20 +70,62 @@
 
 .morph-stage {
   position: relative;
-  min-height: 520px;
+  min-height: 540px;
   perspective: 1600px;
   transform-style: preserve-3d;
   display: grid;
   place-items: center;
 }
 
-.morph-stage .dev {
-  opacity: 0;
-  filter: none;
+/* each stage group is centered + scaled by GSAP */
+.morph-group {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  will-change: transform, opacity;
 }
 
-.morph-stage .dev:first-child {
-  opacity: 1;
+/* inside a group, devices flow normally (group handles centering) */
+.morph-group .dev {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+}
+
+/* stage 1 — two phones side by side */
+.stage-mobile {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  perspective: 1200px;
+}
+.stage-mobile .twin {
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+/* stage 3 — monitor above, keyboard + mouse below */
+.stage-desk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.stage-desk .dev-screen {
+  position: relative;
+}
+.desk-input {
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+}
+
+/* laptop auto-scroll content */
+.stage-web .scr-scroll {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
 }
 
 .morph-shadow {
