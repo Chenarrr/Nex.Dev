@@ -485,3 +485,139 @@
   font-family: var(--mono);
   font-size: 12px;
 }
+
+/* ============ Android: Material delivery app ============ */
+.scr-android {
+  padding: 0;
+  position: relative;
+  background: #0e0f14;
+}
+.scr-status-android {
+  padding: 12px 18px 8px;
+}
+.scr-abar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 6px 18px 16px;
+}
+.scr-abar-menu {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.scr-abar-menu i {
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--fg);
+  opacity: 0.85;
+}
+.scr-abar-title {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.scr-track {
+  margin: 0 16px;
+  padding: 18px;
+  border-radius: 22px;
+  background: linear-gradient(150deg, rgba(124, 92, 255, 0.9), rgba(91, 61, 255, 0.78));
+  color: #fff;
+}
+.scr-track-tag {
+  font-size: 12px;
+  opacity: 0.9;
+}
+.scr-track-eta {
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 4px 0 16px;
+}
+.scr-track-line {
+  display: flex;
+  align-items: center;
+}
+.scr-track-line .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  flex: none;
+}
+.scr-track-line .dot.done {
+  background: #fff;
+}
+.scr-track-line .bar {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.scr-track-line .bar.done {
+  background: #fff;
+}
+.scr-mlist {
+  padding: 18px 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.scr-mrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 18px;
+  background: #16171d;
+}
+.scr-mrow-ic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #2b2c36, #15161b);
+  flex: none;
+}
+.scr-fab {
+  position: absolute;
+  right: 18px;
+  bottom: 78px;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: var(--accent);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  font-weight: 400;
+  box-shadow: 0 12px 28px -8px rgba(124, 92, 255, 0.7);
+}
+.scr-bottomnav {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px 6px;
+  border-top: 1px solid #1f2027;
+  background: #101116;
+}
+.scr-bottomnav span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--muted);
+}
+.scr-bottomnav span i {
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
+  background: #24252e;
+}
+.scr-bottomnav span.on {
+  color: var(--accent);
+}
+.scr-bottomnav span.on i {
+  background: rgba(124, 92, 255, 0.25);
+}

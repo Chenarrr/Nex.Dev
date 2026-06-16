@@ -52,6 +52,75 @@ export function MobileScreen() {
   );
 }
 
+// Android — Material You styling (distinct from the iOS ordering app)
+export function AndroidScreen() {
+  return (
+    <div className="scr scr-android">
+      <div className="scr-status scr-status-android">
+        <span>9:41</span>
+        <span className="scr-status-r">
+          <i className="sig" />
+          <i className="bat" />
+        </span>
+      </div>
+      <div className="scr-abar">
+        <span className="scr-abar-menu">
+          <i />
+          <i />
+          <i />
+        </span>
+        <span className="scr-abar-title">Deliveries</span>
+      </div>
+      <div className="scr-track">
+        <span className="scr-track-tag">On the way</span>
+        <div className="scr-track-eta">12 min</div>
+        <div className="scr-track-line">
+          <span className="dot done" />
+          <span className="bar done" />
+          <span className="dot done" />
+          <span className="bar" />
+          <span className="dot" />
+        </div>
+      </div>
+      <div className="scr-mlist">
+        <div className="scr-mrow">
+          <span className="scr-mrow-ic" />
+          <span className="scr-prod-lines">
+            <b>Order #2049</b>
+            <i>Out for delivery</i>
+          </span>
+        </div>
+        <div className="scr-mrow">
+          <span className="scr-mrow-ic" />
+          <span className="scr-prod-lines">
+            <b>Order #2048</b>
+            <i>Delivered</i>
+          </span>
+        </div>
+      </div>
+      <div className="scr-fab">+</div>
+      <div className="scr-bottomnav">
+        <span className="on">
+          <i />
+          Home
+        </span>
+        <span>
+          <i />
+          Orders
+        </span>
+        <span>
+          <i />
+          Map
+        </span>
+        <span>
+          <i />
+          You
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export function WebScreen() {
   return (
     <div className="scr scr-web">

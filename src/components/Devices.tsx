@@ -7,6 +7,7 @@ export function PhoneFrame({ children }: { children: ReactNode }) {
     <div className="dev phone phone-ios">
       <div className="phone-island" />
       <div className="dev-screen">{children}</div>
+      <div className="phone-home" />
     </div>
   );
 }

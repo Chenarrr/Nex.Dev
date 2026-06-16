@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { morphStages } from "../data/content";
 import { AndroidFrame, Cursor, DesktopFrame, Keyboard, LaptopFrame, Mouse, PhoneFrame } from "./Devices";
-import { DashScreen, MobileScreen, WebScrollScreen, WebScreen } from "./screens";
+import { AndroidScreen, DashScreen, MobileScreen, WebScrollScreen, WebScreen } from "./screens";
 import "./morph.css";
 
 function baseScale(stage: number) {
@@ -38,7 +38,6 @@ export function DeviceMorph() {
           yPercent: -50,
           scale: baseScale(i),
           rotateY: i === 0 ? 0 : 90,
-          transformPerspective: 1200,
           transformOrigin: "50% 50%",
           force3D: true,
         });
@@ -193,11 +192,13 @@ export function DeviceMorph() {
                 <PhoneFrame>
                   <MobileScreen />
                 </PhoneFrame>
+                <span className="twin-os">iOS</span>
               </div>
               <div className="twin twin-android">
                 <AndroidFrame>
-                  <MobileScreen />
+                  <AndroidScreen />
                 </AndroidFrame>
+                <span className="twin-os">Android</span>
               </div>
             </div>
 

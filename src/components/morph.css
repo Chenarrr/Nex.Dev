@@ -77,13 +77,13 @@
   place-items: center;
 }
 
-/* each stage group is centered + scaled by GSAP, and flips on Y */
+/* each stage group is a flat card centered + scaled by GSAP, flipping on Y */
 .morph-group {
   position: absolute;
   left: 50%;
   top: 50%;
   will-change: transform;
-  transform-style: preserve-3d;
+  transform-style: flat;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -101,11 +101,20 @@
   display: flex;
   align-items: center;
   gap: 40px;
-  perspective: 1200px;
 }
 .stage-mobile .twin {
   will-change: transform;
-  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.twin-os {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
 }
 
 /* stage 3 — monitor above, keyboard + mouse below */
