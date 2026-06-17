@@ -76,15 +76,13 @@
   place-items: center;
 }
 
-/* each stage group is a flat card centered + scaled by GSAP, flipping on Y */
+/* each stage group is centered + scaled by GSAP */
 .morph-group {
   position: absolute;
   left: 50%;
   top: 50%;
-  will-change: transform;
-  transform-style: flat;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
 }
 
 /* inside a group, devices flow normally (group handles centering) */
@@ -99,10 +97,12 @@
 .stage-mobile {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 44px;
+  perspective: 1100px;
 }
 .stage-mobile .twin {
   will-change: transform;
+  transform-style: preserve-3d;
   display: flex;
   flex-direction: column;
   align-items: center;
