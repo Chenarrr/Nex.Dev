@@ -6,7 +6,6 @@ import { Hero } from "./components/Hero";
 import { DeviceMorph } from "./components/DeviceMorph";
 import { Services } from "./components/Services";
 import { Projects } from "./components/Projects";
-import { WhyNex } from "./components/WhyNex";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { ServiceModal } from "./components/ServiceModal";
@@ -44,7 +43,6 @@ export default function App() {
         <DeviceMorph />
         <Services />
         <Projects onOpen={setOpenService} />
-        <WhyNex />
         <Contact />
       </main>
       <Footer />
