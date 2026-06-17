@@ -4,9 +4,13 @@
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  gap: 72px;
-  align-items: start;
+  grid-template-columns: 1fr 0.92fr;
+  gap: 56px;
+  align-items: center;
+}
+.contact-card {
+  max-width: 460px;
+  width: 100%;
 }
 
 .contact-sub {
