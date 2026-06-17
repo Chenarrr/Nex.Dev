@@ -7,26 +7,15 @@ const LINKS = [
   { id: "platform", label: "Platform" },
   { id: "services", label: "Services" },
   { id: "work", label: "Work" },
-  { id: "why", label: "About" },
 ];
 
 export function Nav() {
-  const [overDark, setOverDark] = useState(false);
   const [active, setActive] = useState("");
 
   useEffect(() => {
     let frame = 0;
     const check = () => {
       frame = 0;
-      const probe = window.scrollY + 88;
-      const darkSections = document.querySelectorAll<HTMLElement>(".morph, .section-work, .footer");
-      setOverDark(
-        Array.from(darkSections).some((section) => {
-          const top = section.offsetTop;
-          return probe >= top && probe < top + section.offsetHeight;
-        }),
-      );
-      // active section
       const mid = window.scrollY + window.innerHeight * 0.4;
       let current = "";
       for (const { id } of LINKS) {
@@ -49,7 +38,7 @@ export function Nav() {
   }, []);
 
   return (
-    <header className={`nav${overDark ? " nav-over-dark" : ""}`}>
+    <header className="nav">
       <div className="nav-inner container">
         <a className="nav-brand" href="#top">
           <NexMark size={24} />
