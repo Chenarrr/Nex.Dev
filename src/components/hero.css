@@ -21,6 +21,23 @@
   align-items: center;
 }
 
+/* video-ready device screens */
+.media-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.media-vid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 4;
+}
+
 /* ---- copy ---- */
 .hero-copy {
   max-width: 560px;
