@@ -141,14 +141,14 @@ export const services: Service[] = [
   },
 ];
 
-// "What we do" — six small, static capability tiles.
+// "What we do" — six capability cards, each with the stack/tools we use.
 export const whatWeDo = [
-  { no: "01", title: "Apps", line: "iOS & Android" },
-  { no: "02", title: "Web", line: "Sites & web apps" },
-  { no: "03", title: "Systems", line: "POS & inventory" },
-  { no: "04", title: "Design", line: "UI, UX & brand" },
-  { no: "05", title: "Security", line: "Backups & monitoring" },
-  { no: "06", title: "Support", line: "Updates, on call" },
+  { title: "Apps", line: "iOS & Android", tools: ["Swift", "Kotlin", "Flutter"] },
+  { title: "Web", line: "Sites & web apps", tools: ["React", "Next.js", "TypeScript"] },
+  { title: "Systems", line: "POS & inventory", tools: ["Node", "PostgreSQL"] },
+  { title: "Design", line: "UI, UX & brand", tools: ["Figma"] },
+  { title: "Security", line: "Backups & monitoring", tools: ["Cloudflare", "Sentry"] },
+  { title: "Support", line: "Updates, on call", tools: ["24/7", "SLAs"] },
 ];
 
 export interface Project {

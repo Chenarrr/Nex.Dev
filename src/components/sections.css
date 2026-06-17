@@ -39,29 +39,8 @@
   border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
   box-shadow: 0 30px 60px -40px rgba(18, 19, 24, 0.45);
 }
-.wd-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.wd-glyph {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-  background: var(--surface-2);
-  border: 1px solid var(--line);
-  color: var(--fg);
-}
-.wd-no {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-}
 .wd-tile h3 {
-  margin: auto 0 0;
+  margin: 0;
   font-size: 22px;
   font-weight: 560;
   letter-spacing: -0.035em;
@@ -70,6 +49,23 @@
   margin: 7px 0 0;
   color: var(--muted);
   font-size: 14px;
+}
+.wd-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+.wd-tools span {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 5px 9px;
 }
 
 @media (max-width: 720px) {
@@ -154,14 +150,14 @@
   flex-direction: column;
   overflow: hidden;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 1.5px solid color-mix(in srgb, var(--fg) 20%, var(--line));
   border-radius: 18px;
   color: var(--fg);
   transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .work-card:hover {
   transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+  border-color: var(--accent);
 }
 
 .work-media {

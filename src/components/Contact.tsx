@@ -1,7 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { contact } from "../data/content";
 import { Reveal } from "./Reveal";
-import { NexMark } from "./NexMark";
 import "./contact.css";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -46,10 +45,6 @@ export function Contact() {
           <span className="eyebrow">Get in touch</span>
           <h2 className="section-title">{contact.heading}</h2>
           <p className="contact-sub">{contact.sub}</p>
-          <div className="contact-meta">
-            <NexMark size={20} />
-            <span className="mono">hello@nex.dev · Erbil</span>
-          </div>
         </Reveal>
 
         <Reveal delay={0.1} className="contact-card">

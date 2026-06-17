@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { whatWeDo } from "../data/content";
 import { Reveal } from "./Reveal";
-import { NexMark } from "./NexMark";
 import "./sections.css";
 
 export function Services() {
@@ -17,20 +16,19 @@ export function Services() {
           {whatWeDo.map((w, i) => (
             <motion.div
               className="wd-tile"
-              key={w.no}
+              key={w.title}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.06 + Math.floor(i / 3) * 0.04, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="wd-top">
-                <span className="wd-glyph">
-                  <NexMark size={16} slash="currentColor" />
-                </span>
-                <span className="wd-no">{w.no}</span>
-              </div>
               <h3>{w.title}</h3>
               <p>{w.line}</p>
+              <div className="wd-tools">
+                {w.tools.map((t) => (
+                  <span key={t}>{t}</span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
