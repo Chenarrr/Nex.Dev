@@ -29,10 +29,14 @@ html[data-theme="dark"] .nav {
 .nav-brand {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
+  gap: 9px;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 23px;
   letter-spacing: -0.045em;
+}
+.nav-brand svg {
+  width: 23px;
+  height: 23px;
 }
 
 .nav-links {

@@ -41,7 +41,7 @@ export function Nav() {
     <header className="nav">
       <div className="nav-inner container">
         <a className="nav-brand" href="#top">
-          <NexMark size={32} />
+          <NexMark size={28} />
           <span>Nex</span>
         </a>
         <nav className="nav-links">
