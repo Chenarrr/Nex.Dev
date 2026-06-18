@@ -32,10 +32,16 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   transition: opacity 0.4s ease;
   pointer-events: none;
   z-index: 4;
+}
+.media-vid-cover {
+  object-fit: cover;
+}
+.media-vid-contain {
+  object-fit: contain;
+  background: #0a0a0d;
 }
 
 /* ---- copy ---- */
@@ -92,8 +98,8 @@
 .hero-laptop {
   position: absolute;
   top: 30px;
-  right: -60px;
-  transform: scale(0.66);
+  right: 30px;
+  transform: scale(0.62);
   transform-origin: top right;
 }
 .hero-phone {

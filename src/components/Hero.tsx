@@ -25,13 +25,13 @@ const chip = {
 
 // Plays a looping video inside a device screen; falls back to the mock UI
 // until a real clip exists at `src`.
-function MediaScreen({ src, children }: { src: string; children: ReactNode }) {
+function MediaScreen({ src, children, fit = "cover" }: { src: string; children: ReactNode; fit?: "cover" | "contain" }) {
   const [ok, setOk] = useState(false);
   return (
     <div className="media-screen">
       {children}
       <video
-        className="media-vid"
+        className={`media-vid media-vid-${fit}`}
         src={src}
         autoPlay
         muted
@@ -72,7 +72,7 @@ export function Hero() {
 
           <motion.div className="hero-phone" variants={piece}>
             <PhoneFrame>
-              <MediaScreen src="/media/hero-app.mp4">
+              <MediaScreen src="/media/hero-app.mp4" fit="contain">
                 <MobileScreen />
               </MediaScreen>
             </PhoneFrame>
