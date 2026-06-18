@@ -18,10 +18,6 @@ const piece = {
   hidden: { opacity: 0, y: 40, scale: 0.92 },
   show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease } },
 };
-const chip = {
-  hidden: { opacity: 0, y: 14, scale: 0.8 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease } },
-};
 
 // Plays a looping video inside a device screen; falls back to the mock UI
 // until a real clip exists at `src`.
@@ -76,11 +72,6 @@ export function Hero() {
                 <MobileScreen />
               </MediaScreen>
             </PhoneFrame>
-          </motion.div>
-
-          <motion.div className="hero-chip chip-rate" variants={chip}>
-            <b>4.9</b>
-            <span className="chip-k">★ App Store</span>
           </motion.div>
         </motion.div>
       </div>
