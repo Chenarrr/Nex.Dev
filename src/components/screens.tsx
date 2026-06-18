@@ -1,6 +1,32 @@
 // Believable product mock UIs inside the device frames. Volt accent only.
 import "./screens.css";
 
+const S = { fill: "none", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+const IconCup = () => (
+  <svg className="ic" viewBox="0 0 24 24" {...S}><path d="M5 8h11v5a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V8Z" /><path d="M16 9h2a2 2 0 0 1 0 4h-2" /><path d="M8 3v2M11.5 3v2" /></svg>
+);
+const IconCroissant = () => (
+  <svg className="ic" viewBox="0 0 24 24" {...S}><path d="M4 17c5 2 11 1 16-5-3 1-6 0-8-2-1 4-4 6-8 7Z" /><path d="M9 13l2 2M13 10l2 2" /></svg>
+);
+const IconBell = () => (
+  <svg className="ic" viewBox="0 0 24 24" {...S}><path d="M6 9a6 6 0 0 1 12 0c0 4 2 6 2 6H4s2-2 2-6Z" /><path d="M10 19a2 2 0 0 0 4 0" /></svg>
+);
+const IconBox = () => (
+  <svg className="ic" viewBox="0 0 24 24" {...S}><path d="M12 3 4 7l8 4 8-4-8-4Z" /><path d="M4 7v9l8 4 8-4V7" /><path d="M12 11v9" /></svg>
+);
+const IconHome = () => (
+  <svg className="ic" viewBox="0 0 24 24" {...S}><path d="M4 11l8-6 8 6" /><path d="M6 10v9h12v-9" /></svg>
+);
+const IconBag = () => (
+  <svg className="ic" viewBox="0 0 24 24" {...S}><path d="M6 8h12l-1 11H7L6 8Z" /><path d="M9 8a3 3 0 0 1 6 0" /></svg>
+);
+const IconMap = () => (
+  <svg className="ic" viewBox="0 0 24 24" {...S}><path d="M9 4 4 6v14l5-2 6 2 5-2V4l-5 2-6-2Z" /><path d="M9 4v14M15 6v14" /></svg>
+);
+const IconUser = () => (
+  <svg className="ic" viewBox="0 0 24 24" {...S}><circle cx="12" cy="8" r="3.2" /><path d="M5.5 20a6.5 6.5 0 0 1 13 0" /></svg>
+);
+
 export function MobileScreen() {
   return (
     <div className="scr scr-mobile">
@@ -16,7 +42,12 @@ export function MobileScreen() {
           <div className="scr-hello">Good morning</div>
           <div className="scr-name">Karwan</div>
         </div>
-        <div className="scr-avatar">K</div>
+        <div className="scr-mhead-r">
+          <span className="scr-bell">
+            <IconBell />
+          </span>
+          <div className="scr-avatar">K</div>
+        </div>
       </div>
       <div className="scr-feature">
         <span className="scr-feature-tag">Today only</span>
@@ -32,7 +63,9 @@ export function MobileScreen() {
         <span>Bakery</span>
       </div>
       <div className="scr-prod">
-        <span className="scr-prod-ic" />
+        <span className="scr-prod-ic">
+          <IconCup />
+        </span>
         <span className="scr-prod-lines">
           <b>Cappuccino</b>
           <i>Double shot</i>
@@ -40,7 +73,9 @@ export function MobileScreen() {
         <span className="scr-prod-price">3,000</span>
       </div>
       <div className="scr-prod">
-        <span className="scr-prod-ic alt" />
+        <span className="scr-prod-ic alt">
+          <IconCroissant />
+        </span>
         <span className="scr-prod-lines">
           <b>Croissant</b>
           <i>Butter</i>
@@ -84,14 +119,18 @@ export function AndroidScreen() {
       </div>
       <div className="scr-mlist">
         <div className="scr-mrow">
-          <span className="scr-mrow-ic" />
+          <span className="scr-mrow-ic">
+            <IconBox />
+          </span>
           <span className="scr-prod-lines">
             <b>Order #2049</b>
             <i>Out for delivery</i>
           </span>
         </div>
         <div className="scr-mrow">
-          <span className="scr-mrow-ic" />
+          <span className="scr-mrow-ic">
+            <IconBox />
+          </span>
           <span className="scr-prod-lines">
             <b>Order #2048</b>
             <i>Delivered</i>
@@ -101,19 +140,19 @@ export function AndroidScreen() {
       <div className="scr-fab">+</div>
       <div className="scr-bottomnav">
         <span className="on">
-          <i />
+          <IconHome />
           Home
         </span>
         <span>
-          <i />
+          <IconBag />
           Orders
         </span>
         <span>
-          <i />
+          <IconMap />
           Map
         </span>
         <span>
-          <i />
+          <IconUser />
           You
         </span>
       </div>

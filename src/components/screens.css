@@ -621,3 +621,40 @@
 .scr-bottomnav span.on i {
   background: rgba(124, 92, 255, 0.25);
 }
+
+/* ---- icons in the app mockups ---- */
+.ic {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.scr-prod-ic {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+.scr-prod-ic.alt {
+  color: var(--accent);
+}
+.scr-mrow-ic {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+.scr-mhead-r {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.scr-bell {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+.scr-bottomnav span svg {
+  width: 22px;
+  height: 22px;
+}
+.scr-bottomnav span.on svg {
+  color: var(--accent);
+}
