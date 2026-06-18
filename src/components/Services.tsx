@@ -25,8 +25,15 @@ export function Services() {
               <h3>{w.title}</h3>
               <p>{w.line}</p>
               <div className="wd-tools">
-                {w.tools.map((t) => (
-                  <span key={t}>{t}</span>
+                {w.tools.map((tool) => (
+                  <img
+                    key={tool.slug}
+                    className="tech-ic"
+                    src={`https://cdn.simpleicons.org/${tool.slug}/8a8a93`}
+                    alt={tool.name}
+                    title={tool.name}
+                    loading="lazy"
+                  />
                 ))}
               </div>
             </motion.div>

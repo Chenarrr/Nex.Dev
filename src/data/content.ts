@@ -141,14 +141,20 @@ export const services: Service[] = [
   },
 ];
 
-// "What we do" — six capability cards, each with the stack/tools we use.
+// "What we do" — six capability cards, each with the real stack we use.
+// `slug` matches simpleicons.org for the brand logo.
+const t = (name: string, slug: string) => ({ name, slug });
 export const whatWeDo = [
-  { title: "Apps", line: "iOS & Android", tools: ["Swift", "Kotlin", "Flutter"] },
-  { title: "Web", line: "Sites & web apps", tools: ["React", "Next.js", "TypeScript"] },
-  { title: "Systems", line: "POS & inventory", tools: ["Node", "PostgreSQL"] },
-  { title: "Design", line: "UI, UX & brand", tools: ["Figma"] },
-  { title: "Security", line: "Backups & monitoring", tools: ["Cloudflare", "Sentry"] },
-  { title: "Support", line: "Updates, on call", tools: ["24/7", "SLAs"] },
+  { title: "Apps", line: "iOS & Android", tools: [t("Swift", "swift"), t("Kotlin", "kotlin"), t("Flutter", "flutter")] },
+  { title: "Web", line: "Sites & web apps", tools: [t("React", "react"), t("Next.js", "nextdotjs"), t("TypeScript", "typescript")] },
+  {
+    title: "Systems",
+    line: "Backends & data",
+    tools: [t("Node.js", "nodedotjs"), t("Go", "go"), t("PostgreSQL", "postgresql"), t("MongoDB", "mongodb")],
+  },
+  { title: "Design", line: "UI, UX & brand", tools: [t("Figma", "figma")] },
+  { title: "Infra", line: "Deploy & scale", tools: [t("Docker", "docker"), t("Kubernetes", "kubernetes"), t("Cloudflare", "cloudflare")] },
+  { title: "Security", line: "Backed up & watched", tools: [t("Sentry", "sentry"), t("Cloudflare", "cloudflare")] },
 ];
 
 export interface Project {
