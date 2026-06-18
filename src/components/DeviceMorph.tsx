@@ -10,8 +10,8 @@ function baseScale(stage: number) {
   const mobile = window.innerWidth < 680;
   const tablet = window.innerWidth < 1080;
   if (stage === 0) return mobile ? 0.5 : tablet ? 0.64 : 0.8;
-  if (stage === 1) return mobile ? 0.42 : tablet ? 0.6 : 0.74;
-  return mobile ? 0.34 : tablet ? 0.5 : 0.66;
+  if (stage === 1) return mobile ? 0.42 : tablet ? 0.6 : 0.72;
+  return mobile ? 0.32 : tablet ? 0.44 : 0.54;
 }
 
 export function DeviceMorph() {
@@ -41,11 +41,9 @@ export function DeviceMorph() {
       gsap.set(".stage-desk .desk-mouse", { x: 360, opacity: 0 });
 
       const tl = gsap.timeline();
-      // 1 — phones flip, then split apart (iPhone left, Android right)
-      tl.to(".twin-ios .dev", { rotateY: 360, duration: 0.5, ease: "power2.inOut" }, 0)
-        .to(".twin-android .dev", { rotateY: -360, duration: 0.5, ease: "power2.inOut" }, 0.06)
-        .to(".twin-ios", { x: -150, duration: 0.5, ease: "power2.inOut" }, 0.5)
-        .to(".twin-android", { x: 150, duration: 0.5, ease: "power2.inOut" }, 0.5);
+      // 1 — phones glide apart, iPhone left, Android right (smooth, no flip)
+      tl.fromTo(".twin-ios", { x: 0 }, { x: -170, duration: 1, ease: "power2.out" }, 0)
+        .fromTo(".twin-android", { x: 0 }, { x: 170, duration: 1, ease: "power2.out" }, 0);
       // 2 — phones out, MacBook appears + opens
       tl.to(groups[0], { opacity: 0, duration: 0.3 }, 1.15)
         .set(groups[1], { opacity: 1 }, 1.22)
