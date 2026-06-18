@@ -97,31 +97,20 @@
 }
 .hero-laptop {
   position: absolute;
-  top: 26px;
-  right: -70px;
-  transform: scale(0.78);
+  top: 18px;
+  right: -150px;
+  transform: scale(0.7);
   transform-origin: top right;
-  filter: drop-shadow(0 50px 90px rgba(0, 0, 0, 0.42));
-}
-/* glass sheen across the laptop screen */
-.hero-laptop::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 32%);
-  mix-blend-mode: screen;
-  pointer-events: none;
-  z-index: 7;
+  filter: drop-shadow(0 50px 80px rgba(0, 0, 0, 0.4));
 }
 .hero-phone {
   position: absolute;
-  left: 22px;
-  bottom: -44px;
-  transform: scale(0.52);
+  left: -18px;
+  bottom: -36px;
+  transform: scale(0.5);
   transform-origin: bottom left;
   z-index: 3;
-  filter: drop-shadow(0 44px 80px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.5));
 }
 
 /* floating UI chips */
