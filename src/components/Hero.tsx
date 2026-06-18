@@ -72,7 +72,7 @@ export function Hero() {
 
           <motion.div className="hero-phone" variants={piece}>
             <PhoneFrame>
-              <MediaScreen src="/media/hero-app.mp4" fit="contain">
+              <MediaScreen src="/media/hero-app.mp4">
                 <MobileScreen />
               </MediaScreen>
             </PhoneFrame>

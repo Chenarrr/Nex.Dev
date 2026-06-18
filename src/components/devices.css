@@ -52,7 +52,8 @@
   height: 24px;
   background: #050507;
   border-radius: 14px;
-  z-index: 3;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.35);
+  z-index: 6;
 }
 .phone-home {
   position: absolute;
@@ -62,8 +63,8 @@
   width: 116px;
   height: 5px;
   border-radius: 3px;
-  background: rgba(244, 244, 245, 0.6);
-  z-index: 3;
+  background: rgba(244, 244, 245, 0.7);
+  z-index: 6;
 }
 
 /* Android — squarer, punch-hole camera, nav hint */

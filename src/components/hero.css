@@ -97,10 +97,11 @@
 }
 .hero-laptop {
   position: absolute;
-  top: 30px;
-  right: 30px;
-  transform: scale(0.62);
+  top: 18px;
+  right: -150px;
+  transform: scale(0.7);
   transform-origin: top right;
+  filter: drop-shadow(0 50px 80px rgba(0, 0, 0, 0.4));
 }
 .hero-phone {
   position: absolute;
