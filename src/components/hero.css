@@ -77,17 +77,6 @@
 .hero-h1 .dim {
   color: var(--muted);
 }
-.hero-sub {
-  margin: 26px 0 0;
-  max-width: 44ch;
-  color: var(--muted);
-  font-size: clamp(16px, 1.4vw, 19px);
-  line-height: 1.6;
-}
-.hero-actions {
-  margin-top: 36px;
-}
-
 /* ---- product scene (scaled, bleeds right) ---- */
 .hero-scene {
   position: relative;
@@ -113,71 +102,6 @@
   filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.5));
 }
 
-/* floating UI chips */
-.hero-chip {
-  position: absolute;
-  z-index: 4;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 15px;
-  border-radius: 14px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: 0 24px 50px -26px rgba(0, 0, 0, 0.6);
-  font-size: 13px;
-  color: var(--fg);
-  white-space: nowrap;
-}
-.hero-chip .chip-k {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.hero-chip b {
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-.hero-chip em {
-  font-style: normal;
-  font-size: 12px;
-  color: #34c759;
-}
-.chip-stat {
-  top: 8px;
-  left: -6px;
-}
-.chip-note {
-  bottom: 96px;
-  right: -30px;
-}
-.chip-pulse {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 0 rgba(124, 92, 255, 0.5);
-  animation: chipPulse 2s ease-out infinite;
-}
-@keyframes chipPulse {
-  0% { box-shadow: 0 0 0 0 rgba(124, 92, 255, 0.5); }
-  100% { box-shadow: 0 0 0 10px rgba(124, 92, 255, 0); }
-}
-.chip-rate {
-  bottom: 8px;
-  left: 120px;
-}
-.chip-rate b {
-  font-size: 16px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .chip-pulse {
-    animation: none;
-  }
-}
 
 @media (max-width: 980px) {
   .hero-inner {
