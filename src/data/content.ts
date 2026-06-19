@@ -203,11 +203,6 @@ export const projects: Project[] = [
   },
 ];
 
-export const why = {
-  lines: ["A small team", "that ships.", "No shortcuts."],
-  sub: "No outsourcing. No templates. Built by people you can reach.",
-};
-
 export const contact = {
   heading: "Tell us what you're building.",
   sub: "An app, a site, a system — or just an idea. We reply within a day.",
